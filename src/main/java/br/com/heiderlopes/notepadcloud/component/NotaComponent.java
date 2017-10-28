@@ -32,7 +32,6 @@ public class NotaComponent {
     }
 
     public Nota buscarNota(String titulo) {
-        Nota nota;
         List<Nota> notas = notaRepository.findByTitulo(titulo);
         if (notas.isEmpty()) {
             return new Nota();

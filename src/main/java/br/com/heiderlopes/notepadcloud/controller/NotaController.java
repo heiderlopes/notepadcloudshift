@@ -22,6 +22,11 @@ public class NotaController {
         return notaComponent.findAll();
     }
 
+    @GetMapping(value = "/titulo/{titulo}")
+    private Nota findAll(@PathVariable(value = "titulo") String titulo) {
+        return notaComponent.buscarNota(titulo);
+    }
+
     @PostMapping
     private void save(@RequestBody Nota nota) {
         notaComponent.salvar(nota);
